@@ -9,5 +9,7 @@ namespace Demo_KlantenMetBestellingen.Services
         IList<Klant> GeefAlleKlanten();
         IList<Bestelling> VoegBestellingToeVoorKlant(Bestelling bestelling, Klant klant);
         IList<Klant> VoegKlantToe(Klant klant);
+        void WijzigKlant(Klant klant);
+        IList<Klant> VerwijderKlant(Klant klant);
     }
 }

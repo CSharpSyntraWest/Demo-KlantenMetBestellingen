@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Demo_KlantenMetBestellingen.Services
 {
@@ -109,10 +110,21 @@ namespace Demo_KlantenMetBestellingen.Services
 
         public IList<Klant> VoegKlantToe(Klant klant)
         {
+            int newId = _klanten.Count==0? 1:_klanten.Max(k => k.Id) + 1;
+            klant.Id = newId;
             _klanten.Add(klant);
             return _klanten;
         }
-        //to do: Wijzigklant en Verwijderklant, 
+        public void WijzigKlant(Klant klant)
+        {
+            int index = _klanten.IndexOf(klant);
+            if (index >= 0) _klanten[index] = klant;
+        }
+        public IList<Klant> VerwijderKlant(Klant klant)
+        {
+            _klanten.Remove(klant);
+            return _klanten;
+        }
         public IList<Bestelling> VoegBestellingToeVoorKlant(Bestelling bestelling, Klant klant)
         {
             int index = _klanten.IndexOf(klant);

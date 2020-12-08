@@ -26,6 +26,7 @@
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Grid.Column="0" Content="Voornaam:" HorizontalAlignment="Right"/>
                 <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding SelectedKlant.Voornaam}" />
@@ -37,6 +38,11 @@
                 <TextBox Grid.Row="6" Grid.Column="2"  Text="{Binding SelectedKlant.PostCode}" />
                 <Label Grid.Row="8" Grid.Column="0" Content="Gemeente:" HorizontalAlignment="Right"/>
                 <TextBox Grid.Row="8" Grid.Column="2"  Text="{Binding SelectedKlant.Gemeente}" />
+                <StackPanel Grid.Row="10" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="10" Content="Nieuw" Command="{Binding AddKlantCommand}"/>
+                    <Button Margin="10" Content="Wijzig" Command="{Binding UpdateKlantCommand}"/>
+                    <Button Margin="10" Content="Verwijder" Command="{Binding DeleteKlantCommand}"/>
+                </StackPanel>
             </Grid>
             <local:BestellingenView DataContext="{Binding SelectedKlant}"/>
         </StackPanel>
