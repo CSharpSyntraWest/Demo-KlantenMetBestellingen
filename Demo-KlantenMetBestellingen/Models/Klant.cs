@@ -39,5 +39,10 @@ namespace Demo_KlantenMetBestellingen.Models
                 OnPropertyChanged(ref _bestellingen, value);
             }
         }
+
+        public override string ToString()
+        {
+            return  this.Voornaam + " " + this.Familienaam;
+        }
     }
 }
