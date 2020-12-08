@@ -25,6 +25,9 @@
             </Expander>
         </StackPanel>
         <StackPanel Grid.Column="1" Margin="10">
+            <GroupBox Margin="10" Header="Details van Klant">
+                <views:KlantDetailsView DataContext="{Binding KlantenVM}"/>
+            </GroupBox>
             <GroupBox Margin="10" Header=" Bestellingen">
                 <views:BestellingenView DataContext="{Binding BestellingenVM}"/>
             </GroupBox> 

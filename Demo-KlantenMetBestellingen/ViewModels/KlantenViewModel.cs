@@ -12,6 +12,7 @@ namespace Demo_KlantenMetBestellingen.ViewModels
     {
         private IDataService _dataService;
         private ObservableCollection<Klant> _klanten;
+        private Klant _selectedKlant;
         public KlantenViewModel(IDataService dataService)
         {
             _dataService = dataService;
@@ -23,5 +24,11 @@ namespace Demo_KlantenMetBestellingen.ViewModels
             get { return _klanten; }
             set { OnPropertyChanged(ref _klanten, value); }
         }
+        public Klant SelectedKlant
+        {
+            get { return _selectedKlant; }
+            set { OnPropertyChanged(ref _selectedKlant, value); }
+        }
+
     }
 }
